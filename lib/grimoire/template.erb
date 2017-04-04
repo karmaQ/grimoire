@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <style>
+      @page {
+        margin: 1cm;
+        margin-bottom: 2.5cm;
+        @frame footer {
+          -pdf-frame-content: footer-content;
+          bottom: 1cm;
+          margin-left: 1cm;
+          margin-right: 1cm;
+          height: 1cm;
+        }
+        @frame footer {
+          -pdf-frame-content: header-content;
+          top: 0.5cm;
+          margin-left: 17.5cm;
+          margin-right: 1cm;
+          height: 1cm;
+        }
+      }
+      font {
+        font-size: 140%;
+      } 
+    </style>
+  </head>
+  <body>
+    <div id="footer-content">
+      page <pdf:pagenumber />
+    </div>
+    <div id="header-content" style="margin-left: -2cm">
+      <b>Project: {0}</b>
+    </div>
+    <h1 style="font-size:300%">Project: {0}</h1>
+    <%= body %>
+  </body>
+</html>
